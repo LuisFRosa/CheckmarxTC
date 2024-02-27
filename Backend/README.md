@@ -1,48 +1,33 @@
-# Running the Technical Challenge
+# Project Name
 
-This repository contains a simple Go program that scans files in different configuration (i.e, All, CrossSiteScripting, SensitiveDataExposure, or SQLInjection)
+Checkmarx Technical Challenge using GoLang on the server-side.
 
 ## Prerequisites
 
-Before running the program, make sure you have Go installed on your machine. You can download and install it from the [official Go website](https://golang.org/).
+- Go installed on your machine
 
-## How to Run
+## Getting Started
 
-1. **Clone the Repository:**
-
-    ```bash
-    git clone https://github.com/LuisFRosa/CheckmarxGo.git
-    ```
-
-2. **Navigate to the Project Directory:**
+1. **Clone the repository:**
 
     ```bash
-    cd .\Program\
+    git clone https://github.com/LuisFRosa/CheckmarxTC.git
     ```
 
-3. **Build the Go Program:**
+2. **Navigate to the app directory:**
 
     ```bash
-    go build .
+    cd Backend/src/app
     ```
 
-4. **Run the Executable:**
+3. **Run the application:**
 
     ```bash
-    ./Program main.go ./code All
+    go run main.go
     ```
 
-## Usage
+    This command will compile and execute the `main.go` file.
 
-Once the program is running, it will prompt you to enter the program main. After entering program main (i.e, main.go), then enter the path to the source, it will also run with a scan configuration parameter.
+4. **Access the application:**
 
-Example of outcome:
-
-```plaintext
-[Cross site scripting] in file "checmark.html" on line 25
-[Sensitive data exposure.] in file "checmark.html" on line 27
-[Sensitive data exposure.] in file "checmark.html" on line 34
-[Sensitive data exposure.] in file "checmark.html" on line 41
-[SQL injection] in file "checmark2.txt" on line 1
-[SQL injection] in file "checmark2.txt" on line 8
-[Sensitive data exposure.] in file "checmark2.txt" on line 10
+    Once the application is running, you can access it in your web browser at `http://localhost:8080`, where `8080` is the port your application is listening on.

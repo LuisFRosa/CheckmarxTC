@@ -49,7 +49,7 @@ function App() {
       <input type="file" multiple onChange={handleFileChange} />
       <button onClick={handleSubmit} disabled={selectedFiles.length===0}>Scan Files</button>
       <div className="errors">
-        {errors.length > 0 && (
+        {selectedFiles.length > 0 && errors.length > 0 && (
           <div>
             <h2>Errors:</h2>
             <ul>
