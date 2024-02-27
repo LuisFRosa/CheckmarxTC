@@ -46,26 +46,3 @@ Checkmarx Technical Challenge using ReactJS on the client-side.
     ```
 
     This command will create an optimized production build of your application in the `build` directory.
-
-- **Run tests:**
-
-    ```bash
-    npm test
-    ```
-
-    This command will run any tests associated with the project.
-
-## Contributing
-
-If you would like to contribute to the project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/fooBar`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add some fooBar'`).
-5. Push to the branch (`git push origin feature/fooBar`).
-6. Create a new Pull Request.
-
-## License
-
-Specify your project's license here.
