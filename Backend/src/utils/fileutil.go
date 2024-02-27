@@ -1,15 +1,12 @@
-package auxfiles
+package utils
 
-// import the 4 modules we need
+// import the 2 modules we need
 import (
 	"bufio"
 	"mime/multipart"
 )
 
-type FileUtil struct {
-}
-
-func (FileUtil) ReadLines(fileHeader *multipart.FileHeader) (lines []string, err error) {
+func ReadLines(fileHeader *multipart.FileHeader) (lines []string, err error) {
 	// Open the file associated with the FileHeader
 	inFile, err := fileHeader.Open()
 	if err != nil {

@@ -1,5 +1,6 @@
-package auxfiles
+package utils
 
+// import the 4 modules we need
 import (
 	"path/filepath"
 	"regexp"
@@ -7,10 +8,7 @@ import (
 	"strings"
 )
 
-type SecurityUtil struct {
-}
-
-func (SecurityUtil) CheckLine(scanconfig string, fileName string, line string, index int) (errors []string) {
+func CheckLine(scanconfig string, fileName string, line string, index int) (errors []string) {
 
 	// overwrite number of line
 	nLine := strconv.Itoa(index + 1)
@@ -33,7 +31,7 @@ func (SecurityUtil) CheckLine(scanconfig string, fileName string, line string, i
 				strings.Contains(quote, "Hellman & Friedman") ||
 				strings.Contains(quote, "$1.15b")) {
 
-			errors = append(errors, "[Sensitive data exposure.] in file \""+fileName+"\" on line "+nLine)
+			errors = append(errors, "[Sensitive data exposure] in file \""+fileName+"\" on line "+nLine)
 		}
 
 		// SQL injection

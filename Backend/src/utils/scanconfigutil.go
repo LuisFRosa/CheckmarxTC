@@ -1,10 +1,7 @@
-package auxfiles
+package utils
 
 // import the 1 modules we need
 import "errors"
-
-type ScanConfig struct {
-}
 
 type ScanType string
 
@@ -16,7 +13,7 @@ const (
 	SQLInjection          ScanType = "SQLInjection"
 )
 
-func (ScanConfig) IsValid(sc string) error {
+func IsValid(sc string) error {
 	scc := ScanType(sc)
 	switch scc {
 	case All, CrossSiteScripting, SensitiveDataExposure, SQLInjection:
