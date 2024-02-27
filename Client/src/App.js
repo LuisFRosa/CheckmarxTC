@@ -22,7 +22,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/scan', formData, {
+      const response = await axios.post('http://localhost:8080/scan', formData, {
         params: {
           scanConfig: selectedScanConfig
         },

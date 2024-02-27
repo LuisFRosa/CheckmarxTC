@@ -17,7 +17,7 @@ type ScanResult struct {
 
 func main() {
 	http.HandleFunc("/scan", scanHandler)
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":8080", nil)
 }
 
 func scanHandler(w http.ResponseWriter, r *http.Request) {
