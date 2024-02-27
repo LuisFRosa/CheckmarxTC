@@ -28,7 +28,7 @@ func (SecurityUtil) CheckLine(scanconfig string, fileName string, line string, i
 	for _, quote := range quotes {
 
 		// sensitive data exposure.
-		if (scanconfig == "All" || scanconfig == "SensitiveDataExposure.") &&
+		if (scanconfig == "All" || scanconfig == "SensitiveDataExposure") &&
 			(strings.Contains(quote, "Checkmarx") ||
 				strings.Contains(quote, "Hellman & Friedman") ||
 				strings.Contains(quote, "$1.15b")) {

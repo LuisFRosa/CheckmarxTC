@@ -33,7 +33,7 @@ function App() {
 
       setErrors(response.data.errors);
     } catch (error) {
-      console.error('Error scanning files:', error);
+      setErrors(['Error scanning files: '+ error]);
     }
   };
 
