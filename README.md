@@ -22,7 +22,7 @@ Checkmarx Technical Challenge using ReactJS and GoLang
 
 3. **Access the application:**
 
-    Once the services are up and running, you can access your application at `http://localhost:port`, where `port` is the port specified in your `docker-compose.yml` file.
+    Once the services are up and running, you can access your application at `http://localhost:3000`, where `3000` is the port specified in your `docker-compose.yml` file.
 
 ## Stopping the Application
 
