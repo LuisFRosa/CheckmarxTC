@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
+const ScanConfigOptions = [
+  { value: 'All', label: 'All' },
+  { value: 'CrossSiteScripting', label: 'Cross Site Scripting' },
+  { value: 'SensitiveDataExposure', label: 'Sensitive Data Exposure' },
+  { value: 'SQLInjection', label: 'SQL Injection' }
+];
+
 function App() {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [selectedScanConfig, setSelectedScanConfig] = useState('All');
   const [errors, setErrors] = useState([]);
 
   const handleFileChange = (event) => {
-    setErrors([]);
     setSelectedFiles(event.target.files);
   };
 
@@ -42,10 +48,9 @@ function App() {
     <div className="App">
       <h1>File Error Scanner</h1>
       <select value={selectedScanConfig} onChange={handleScanConfigChange}>
-        <option value="All">All</option>
-        <option value="CrossSiteScripting">Cross Site Scripting</option>
-        <option value="SensitiveDataExposure">Sensitive Data Exposure</option>
-        <option value="SQLInjection">SQL Injection</option>
+        {ScanConfigOptions.map(option => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
       </select>
       <input type="file" multiple onChange={handleFileChange} />
       <button onClick={handleSubmit} disabled={selectedFiles.length===0}>Scan Files</button>

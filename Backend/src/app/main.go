@@ -13,10 +13,10 @@ type ScanResult struct {
 	Errors []string `json:"errors"`
 }
 
-func scanner(w http.ResponseWriter, r *http.Request) {
+// Init logger instance
+var log = logger.NewLogger()
 
-	// Init logger instance
-	log := logger.NewLogger()
+func scanner(w http.ResponseWriter, r *http.Request) {
 
 	// Set CORS headers
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -49,10 +49,15 @@ func scanner(w http.ResponseWriter, r *http.Request) {
 	}
 
 	result := ScanResult{Errors: listOfErrors}
-	json.NewEncoder(w).Encode(result)
+	err = json.NewEncoder(w).Encode(result)
+	if err != nil {
+		log.LogError("Error encoding JSON response: " + err.Error())
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+	}
 }
 
 func main() {
+	log.LogInfo("Server started listening on port 8080")
 	http.HandleFunc("/scan", scanner)
 	http.ListenAndServe(":8080", nil)
 }
