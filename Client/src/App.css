@@ -16,6 +16,8 @@ button {
 
 .errors {
   margin-top: 20px;
+  height: 400px;
+  overflow: auto;
 }
 
 .errors ul {

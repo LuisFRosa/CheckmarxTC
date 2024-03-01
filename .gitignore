@@ -1,0 +1,27 @@
+# Ignore binary files and executables for Golang
+/Backend/*.exe
+/Backend/*.exe~
+/Backend/*.dll
+/Backend/*.so
+/Backend/*.dylib
+
+# Ignore vendor directory for Golang (if using modules)
+/Backend/vendor/
+
+# Ignore environment variables file for Golang (if applicable)
+/Backend/.env
+
+# Ignore node_modules directory for React.js
+/Client/node_modules/
+
+# Ignore build output for React.js
+/Client/build/
+
+# Ignore development server files for React.js (if using create-react-app)
+/Client/.cache/
+/Client/.vscode/
+/Client/.env
+
+# Ignore any other editor or IDE specific files
+*.idea/
+.vscode/
